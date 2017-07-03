@@ -1,0 +1,88 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    font-family: 'Mobilo', Arial, sans-serif;
+}
+html, body {
+    font-size: $root-size; //root size for rem calculation
+}
+h1 {
+    font-size: $extra-extra-large;
+    line-height: $extra-extra-large;
+}
+.page-component {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-rotate {
+    transform: scale(1) rotate(0deg);
+    transition: transform 200ms;
+    &:hover {
+        transform: scale(1.2) rotate(360deg);
+    }
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.rounded-btn {
+    padding: 0.85rem 1.6rem 0.75rem;
+    font-size: $extra-small;
+    line-height: $extra-small;
+    border-radius: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    display: inline-block;
+    background: #eee;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        display: block;
+        content: '';
+        background-color: inherit;
+        border-radius: 50px;
+        transition: transform $trans-fast;
+    }
+
+    &:hover {
+        &:before {
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+.round-btn {
+    font-size: $extra-small;
+    line-height: $extra-small;
+    border-radius: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    border: none;
+    display: block;
+    background: #eee;
+
+}

@@ -1,0 +1,35 @@
+//animations
+$trans-time: 300ms;
+$trans-ease: ease-in-out;
+$trans-delay: 400ms;
+
+$trans-fast: 300ms;
+$trans-medium: 600ms;
+$trans-slow: 900ms;
+
+$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+
+$bgImageHeight: 1765; //px
+$bgImageWidth: 2522; //px
+
+//colors
+
+$dark-grey: #3A4344;
+$grey: #7F898B;
+$light-grey: #D0D4D6;
+
+// teksts
+
+$root-size: 22px;
+
+@function calculateRem($size) {
+  $remSize: $size / $root-size;
+  @return #{$remSize}rem;
+}
+$extra-extra-extra-large: calculateRem(140px);
+$extra-extra-large: calculateRem(90px);
+$extra-large: calculateRem(50px);
+$large: calculateRem(28px);
+$medium: calculateRem(22px);
+$small: calculateRem(22px);
+$extra-small: calculateRem(16px);

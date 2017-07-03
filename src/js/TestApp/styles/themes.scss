@@ -1,0 +1,284 @@
+$colors: (
+    arctic: (
+        primary:(
+            one: #5587BE,
+            two: #F19F7C,
+            three: #A3CBE8
+        )
+    ),
+    sahara: (
+        primary: (
+            one: #CDB000,
+            two: #F1AAC8,
+            three: #EEDF84
+        )
+    ),
+    amazon: (
+        primary: (
+            one: #53AC56,
+            two: #82CFEF,
+            three: #BDD7CF
+        )
+    ),
+    space: (
+        primary: (
+            one: #59355D,
+            two: #ADC600,
+            three: #A6A4C2
+        )
+    )
+);
+
+@function deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@mixin theme($theme) {
+    &-dot {
+        background-color: deep-get($colors, $theme, 'primary', 'three');
+        &:before {
+            background-color: deep-get($colors, $theme, 'primary', 'two');
+        }
+        &:after {
+            border-color: deep-get($colors, $theme, 'primary', 'one');
+        }
+        // svg {
+        //     background-color: deep-get($colors, $theme, 'primary', 'one');
+        //     circle {
+        //         fill: map-get(map-get($colors, $theme), primary);
+        //         stroke: map-get(map-get($colors, $theme), secondary);
+        //     }
+        // }
+    }
+    &.locked {
+        .world-link-inner {
+            .world-image {
+                &:before {
+                    background-color: deep-get($colors, $theme, 'primary', 'one');
+                }
+            }
+        }
+    }
+    .world-link-inner {
+        .world-image {
+            .restart-btn {
+                color: deep-get($colors, $theme, 'primary', 'one');
+            }
+        }
+    }
+    &.start-btn {
+        background-color: deep-get($colors, $theme, 'primary', 'one');
+    }
+
+    &.world-component {
+        .react-draggable {
+            background-color: deep-get($colors, $theme, 'primary', 'three');
+        }
+        .task-link {
+            color: deep-get($colors, $theme, 'primary', 'two');
+            div {
+                background-color: deep-get($colors, $theme, 'primary', 'two');
+            }
+            &.completed, &.locked {
+                &:before {
+                    background-color: deep-get($colors, $theme, 'primary', 'two');
+                }
+            }
+        }
+        .infobite-link {
+            // background-color: deep-get($colors, $theme, 'primary', 'one');
+            div {
+                background-image: url(../img/bubble-#{$theme}.png);
+            }
+            &:before, &:after {
+                background-color: deep-get($colors, $theme, 'primary', 'one');
+            }
+        }
+        .infobite {
+            background-color: deep-get($colors, $theme, 'primary', 'one');
+        }
+    }
+    .rounded-btn, .round-btn {
+        background-color: deep-get($colors, $theme, 'primary', 'one');
+        color: white;
+        &.reversed {
+            background-color: white;
+            color: deep-get($colors, $theme, 'primary', 'one');
+        }
+    }
+    .world-component {
+        &-sidebar {
+            .globe-btn {
+                color: deep-get($colors, $theme, 'primary', 'two');
+            }
+            .helper {
+                color: deep-get($colors, $theme, 'primary', 'two');
+            }
+            .task-progress {
+                background-color: deep-get($colors, $theme, 'primary', 'two');
+                color: white;
+
+                // svg {
+                //     background-color: map-get(map-get($colors, $theme), primary);
+                //     opacity: 0.6;
+                // }
+                // circle {
+                //     fill: map-get(map-get($colors, $theme), primary);
+                //     stroke: map-get(map-get($colors, $theme), secondary);
+                // }
+                // &:after {
+                //     background-color: map-get(map-get($colors, $theme), secondary);
+                // }
+            }
+            .compass {
+                color: deep-get($colors, $theme, 'primary', 'two');
+            }
+        }
+
+    }
+    &.task-component {
+        .step {
+            &.start, &.intro, &.finish {
+                h1, p {
+                    color: deep-get($colors, $theme, 'primary', 'three');
+                    .icon-container {
+                        background-color: deep-get($colors, $theme, 'primary', 'two');
+                    }
+                }
+            }
+        }
+        .column {
+            &.left {
+                background-color: deep-get($colors, $theme, 'primary', 'one');
+                color: white;
+                h2 {
+                    span {
+                        color: deep-get($colors, $theme, 'primary', 'two');
+                    }
+                }
+                a {
+                    &:before {
+                        color: deep-get($colors, $theme, 'primary', 'one');
+                    }
+                }
+                .ideas {
+                    .icon, .idea {
+                        color: deep-get($colors, $theme, 'primary', 'three');
+                    }
+                }
+            }
+        }
+        textarea {
+            background-image:
+            linear-gradient(deep-get($colors, $theme, 'primary', 'two') .1em, transparent .1rem);
+            color: deep-get($colors, $theme, 'primary', 'one');
+        }
+        .numeric-input {
+            color: deep-get($colors, $theme, 'primary', 'two');
+            + span {
+                color: deep-get($colors, $theme, 'primary', 'one');
+            }
+        }
+        .touch-increment {
+            input {
+                color: deep-get($colors, $theme, 'primary', 'one');
+                & + span {
+                    color: deep-get($colors, $theme, 'primary', 'one');
+                }
+            }
+            button {
+                color: deep-get($colors, $theme, 'primary', 'two');
+            }
+        }
+        .slide-increment {
+            background-color: deep-get($colors, $theme, 'primary', 'three');
+            .handle {
+                &:after {
+                    background-color: deep-get($colors, $theme, 'primary', 'two');
+                }
+                .value-holder {
+                    color: deep-get($colors, $theme, 'primary', 'one');
+                }
+            }
+        }
+        .checkboxgroup, .radiobuttongroup {
+            .checkbox-container, .radiobutton-container {
+                button {
+                    color: deep-get($colors, $theme, 'primary', 'three');
+                    div {
+                        border: 2px solid deep-get($colors, $theme, 'primary', 'three');
+                    }
+                }
+                &.checked {
+                    button {
+                        div {
+                            background-color: deep-get($colors, $theme, 'primary', 'three');
+                            &:after {
+                                background-color: deep-get($colors, $theme, 'primary', 'one');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .square {
+            &.checked {
+                background-color: deep-get($colors, $theme, 'primary', 'three');
+            }
+        }
+        .conversation {
+            .response {
+                &.right {
+                    .speech-bubble {
+                        &:before {
+                            border-color: transparent deep-get($colors, $theme, 'primary', 'two');
+                        }
+                        color: white;
+                        background-color: deep-get($colors, $theme, 'primary', 'two');
+                    }
+                }
+            }
+            .labels {
+                button {
+                    border: 1px solid deep-get($colors, $theme, 'primary', 'two');
+                    background-color: white;
+
+                    &.next-btn {
+                        color: white;
+                        background-color: deep-get($colors, $theme, 'primary', 'two');
+                    }
+                }
+            }
+        }
+        .step-navigation {
+            background-color: deep-get($colors, $theme, 'primary', 'two');
+            svg {
+                background-color: #ccc;
+                opacity: 0.5;
+            }
+            circle {
+                fill: #ccc;
+                stroke: white;
+            }
+        }
+    }
+}
+
+.theme-arctic {
+    @include theme('arctic')
+}
+
+.theme-sahara {
+    @include theme('sahara')
+}
+
+.theme-amazon {
+    @include theme('amazon')
+}
+
+.theme-space {
+    @include theme('space')
+}
