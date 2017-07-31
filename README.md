@@ -1,5 +1,5 @@
-# cym-frontend
-Frontend project for Danske Bank/Great Works CYM
+# Boilerplate: React-Router-Gulp-Webpack
+Frontend Boilerplate with above tech
 
     run git clone
     run yarn
