@@ -8,5 +8,5 @@ app.use(express.static(path.join(__dirname, '/build')))
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
-    console.log(`danskebank.com running on http://localhost:${port}`)
+    console.log(`fengel.com running on http://localhost:${port}`)
 })
