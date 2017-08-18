@@ -1,5 +1,5 @@
-import 'whatwg-fetch'
-import Promise from 'promise-polyfill'
+// import 'whatwg-fetch'
+// import Promise from 'promise-polyfill'
 
 if (!window.Promise) {
     window.Promise = Promise
@@ -12,7 +12,7 @@ export function dataHasErrored(bool) {
     }
 }
 
-export function worldIsLoading(bool) {
+export function dataIsLoading(bool) {
     return {
         type: 'DATA_IS_LOADING',
         isLoading: bool,
@@ -28,13 +28,13 @@ export function fetchDataSuccess(data) {
 
 export function fetchData(url) {
     return (dispatch) => {
-        dispatch(worldIsLoading(true))
-        fetch(url, { credentials: 'same-origin' })
+        dispatch(dataIsLoading(true))
+        fetch(url)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText)
                 }
-                dispatch(worldIsLoading(false))
+                dispatch(dataIsLoading(false))
                 return response
             })
             .then(response => response.json())

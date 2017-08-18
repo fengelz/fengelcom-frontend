@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { homePropTypes } from '../../utils/propTypes'
 import { homeDefaultProps } from '../../utils/defaultProps'
+import { PostsContainer } from '../../containers/'
 
 class Home extends Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Home extends Component {
             <div>
                 <h2>Home</h2>
                 <Link to={'/about'}>About</Link>
+                <div><PostsContainer /></div>
             </div>
         )
     }
