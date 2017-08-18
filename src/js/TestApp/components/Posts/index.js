@@ -20,15 +20,16 @@ class Posts extends Component {
         }
         return (
             <div>
-                fu
+                {this.props.data.data.map(post => (
+                    <div key={post.id}>
+                        <h2>{post.title.rendered}</h2>
+                    </div>
+                ))}
             </div>
         )
     }
 }
-// {this.props.posts.map((post, index) => {
-//     console.log(post, index)
-//     return (<h2>Post</h2>)
-// })}
+
 Posts.propTypes = postsPropTypes
 
 Posts.defaultProps = postsDefaultProps

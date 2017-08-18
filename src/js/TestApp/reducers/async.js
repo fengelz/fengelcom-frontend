@@ -19,7 +19,10 @@ export function dataIsLoading(state = false, action) {
 export function data(state = { isLoading: true }, action) {
     switch (action.type) {
         case 'FETCH_DATA_SUCCESS':
-            return Object.assign({}, state, action.data)
+            return Object.assign({}, state, {
+                isLoading: false,
+                data: action.data,
+            })
 
         default:
             return state
