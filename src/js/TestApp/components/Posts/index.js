@@ -22,7 +22,7 @@ class Posts extends Component {
             <div>
                 {this.props.data.data.map(post => (
                     <div key={post.id}>
-                        <Link to={`/posts/${post.slug}`}>
+                        <Link to={`${post.link.replace('http://fengel.com', '')}`}>
                             <h2>{post.title.rendered}</h2>
                         </Link>
                     </div>
