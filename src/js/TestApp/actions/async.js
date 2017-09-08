@@ -38,8 +38,8 @@ export function fetchData(url) {
                 return response
             })
             .then(response => response.json())
-            .then((world) => {
-                dispatch(fetchDataSuccess(world))
+            .then((data) => {
+                dispatch(fetchDataSuccess(data))
             })
             .catch(() => dispatch(dataHasErrored(true)))
     }
