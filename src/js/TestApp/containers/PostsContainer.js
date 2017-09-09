@@ -3,8 +3,8 @@ import { Posts } from '../components'
 import { fetchData } from '../actions/async'
 
 const mapStateToProps = state => ({
-    data: state.data,
-    isLoading: state.isLoading,
+    posts: state.posts,
+    isLoading: state.posts.isLoading,
 })
 
 const mapDispatchToProps = dispatch => ({

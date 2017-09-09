@@ -15,14 +15,14 @@ class Posts extends Component {
     }
 
     render() {
-        if (this.props.data.isLoading) {
+        if (this.props.isLoading) {
             return <div />
         }
         return (
             <div>
-                {this.props.data.data.map(post => (
+                {this.props.posts.data.map(post => (
                     <div key={post.id}>
-                        <Link to={`${post.link.replace('http://fengel.com', '')}`}>
+                        <Link to={`/blog${post.link.replace('http://fengel.com', '')}`}>
                             <h2>{post.title.rendered}</h2>
                         </Link>
                     </div>

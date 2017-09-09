@@ -7,7 +7,7 @@ export function dataHasErrored(state = false, action) {
     }
 }
 
-export function dataIsLoading(state = false, action) {
+export function dataIsLoading(state = true, action) {
     switch (action.type) {
         case 'DATA_IS_LOADING':
             return action.isLoading
@@ -16,7 +16,20 @@ export function dataIsLoading(state = false, action) {
     }
 }
 
-export function data(state = { isLoading: true }, action) {
+export function posts(state = { isLoading: true }, action) {
+    switch (action.type) {
+        case 'FETCH_DATA_SUCCESS':
+            return Object.assign({}, state, {
+                isLoading: false,
+                data: action.data,
+            })
+
+        default:
+            return state
+    }
+}
+
+export function post(state = { isLoading: true }, action) {
     switch (action.type) {
         case 'FETCH_DATA_SUCCESS':
             return Object.assign({}, state, {

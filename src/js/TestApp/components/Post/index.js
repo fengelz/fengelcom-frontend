@@ -1,27 +1,26 @@
 import React, { Component } from 'react'
 import { postPropTypes } from '../../utils/propTypes'
 import { postDefaultProps } from '../../utils/defaultProps'
+import Html from '../Global/Html'
 
 class Post extends Component {
     constructor(props) {
         super(props)
-        console.log('test')
         this.state = {
         }
     }
 
     componentDidMount() {
-        console.log('test')
-        this.props.fetchData(`http://fengel.com/wp-json/wp/v2/posts/${2}`)
+        this.props.fetchData(`http://fengel.com/wp-json/wp/v2/posts/${this.props.match.params.postId}`)
     }
 
     render() {
-        if (this.props.data.isLoading) {
+        if (this.props.post.isLoading) {
             return <div />
         }
         return (
             <div>
-                Post
+                <Html content={this.props.post.data.content.rendered} />
             </div>
         )
     }

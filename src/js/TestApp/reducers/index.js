@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { data, dataHasErrored, dataIsLoading } from './async'
+import { posts, post, dataHasErrored, dataIsLoading } from './async'
 
 export default combineReducers({
-    data,
+    posts,
+    post,
     dataHasErrored,
     dataIsLoading,
 })

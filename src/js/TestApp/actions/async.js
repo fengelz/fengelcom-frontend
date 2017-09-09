@@ -27,6 +27,7 @@ export function fetchDataSuccess(data) {
 }
 
 export function fetchData(url) {
+    console.log('url', url);
     return (dispatch) => {
         dispatch(dataIsLoading(true))
         fetch(url)
@@ -39,6 +40,7 @@ export function fetchData(url) {
             })
             .then(response => response.json())
             .then((data) => {
+                console.log(url, data)
                 dispatch(fetchDataSuccess(data))
             })
             .catch(() => dispatch(dataHasErrored(true)))
