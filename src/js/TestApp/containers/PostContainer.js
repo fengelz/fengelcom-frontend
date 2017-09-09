@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { Post } from '../components'
-import { fetchData } from '../actions/async'
+import { fetchPost } from '../actions/post'
 
 const mapStateToProps = state => ({
     post: state.post,
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchData: url => dispatch(fetchData(url)),
+    fetchPost: url => dispatch(fetchPost(url)),
 })
 
 const PostContainer = connect(mapStateToProps, mapDispatchToProps)(Post)

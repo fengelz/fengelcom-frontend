@@ -13,7 +13,7 @@ const TestApp = () => (
             <Switch>
                 <Route exact path="/" component={HomeContainer} />
                 <Route path="/about" component={AboutContainer} />
-                <Route path="/blog/:postId/:slug" component={PostContainer} />
+                <Route path="/:postId/:slug" component={PostContainer} />
             </Switch>
         </Router>
     </Provider>

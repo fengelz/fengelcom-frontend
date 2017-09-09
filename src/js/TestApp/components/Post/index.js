@@ -11,12 +11,12 @@ class Post extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchData(`http://fengel.com/wp-json/wp/v2/posts/${this.props.match.params.postId}`)
+        this.props.fetchPost(`http://fengel.com/wp-json/wp/v2/posts/${this.props.match.params.postId}`)
     }
 
     render() {
-        if (this.props.post.isLoading) {
-            return <div />
+        if (this.props.isLoading) {
+            return <div>loading.</div>
         }
         return (
             <div>

@@ -11,18 +11,18 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchData('http://fengel.com/wp-json/wp/v2/posts')
+        this.props.fetchPosts('http://fengel.com/wp-json/wp/v2/posts')
     }
 
     render() {
         if (this.props.isLoading) {
-            return <div />
+            return <div>loading...</div>
         }
         return (
             <div>
                 {this.props.posts.data.map(post => (
                     <div key={post.id}>
-                        <Link to={`/blog${post.link.replace('http://fengel.com', '')}`}>
+                        <Link to={`${post.link.replace('http://fengel.com', '')}`}>
                             <h2>{post.title.rendered}</h2>
                         </Link>
                     </div>
