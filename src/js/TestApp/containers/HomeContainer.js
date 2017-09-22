@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import { Home } from '../components'
-import { fetchData } from '../actions/async'
+import { fetchPage } from '../actions/page'
 
 const mapStateToProps = state => ({
     data: state,
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchData: url => dispatch(fetchData(url)),
+    fetchData: url => dispatch(fetchPage(url)),
 })
 
 const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home)
