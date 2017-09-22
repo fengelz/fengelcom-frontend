@@ -21,3 +21,7 @@ export const historyPropTypes = shape({
 
 export const homePropType = {
 }
+
+export const masterPropType = shape({
+    children: arrayOf(obj),
+})

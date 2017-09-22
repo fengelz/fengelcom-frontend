@@ -4,19 +4,22 @@ import { Route, BrowserRouter as Router, history, Switch } from 'react-router-do
 
 import configureStore from './store/configureStore'
 import { HomeContainer, AboutContainer, PostContainer } from './containers'
+import { Master } from './components/'
 
 const store = configureStore()
 
 const TestApp = () => (
-    <Provider store={store} >
-        <Router history={history}>
-            <Switch>
-                <Route exact path="/" component={HomeContainer} />
-                <Route path="/about" component={AboutContainer} />
-                <Route path="/:postId/:slug" component={PostContainer} />
-            </Switch>
-        </Router>
-    </Provider>
+    <Master>
+        <Provider store={store} >
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/" component={HomeContainer} />
+                    <Route path="/about" component={AboutContainer} />
+                    <Route path="/:postId/:slug" component={PostContainer} />
+                </Switch>
+            </Router>
+        </Provider>
+    </Master>
 )
 
 export default TestApp
