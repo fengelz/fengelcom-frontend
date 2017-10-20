@@ -12,7 +12,7 @@ class Menu extends Component {
 
     render() {
         return (
-            <div>
+            <div className="menu">
                 <Link to={'/'}>Home</Link>
                 <Link to={'/about'}>About</Link>
             </div>

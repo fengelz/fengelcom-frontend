@@ -16,7 +16,7 @@ class Home extends Component {
         }
         return (
             <div>
-                <div><PostsContainer /></div>
+                <div><PostsContainer /><PostsContainer /></div>
             </div>
         )
     }

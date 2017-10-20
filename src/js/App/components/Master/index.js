@@ -12,9 +12,9 @@ class Master extends Component {
 
     render() {
         return (
-            <div className="Master">
+            <div className="master">
                 <Header />
-                {this.props.children}
+                <main>{this.props.children}</main>
             </div>
         )
     }

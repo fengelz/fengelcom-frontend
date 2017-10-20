@@ -10,14 +10,14 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="header-container">
+            <aside>
                 <header className="wrapper clearfix">
                     <h1 className="title">
                         Fengel.com
                     </h1>
                 </header>
                 <Menu />
-            </div>
+            </aside>
         )
     }
 }
