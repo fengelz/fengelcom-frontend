@@ -8,7 +8,7 @@ import { Master } from './components/'
 
 const store = configureStore()
 
-const TestApp = () => (
+const App = () => (
     <Master>
         <Provider store={store} >
             <Router history={history}>
@@ -22,4 +22,4 @@ const TestApp = () => (
     </Master>
 )
 
-export default TestApp
+export default App
