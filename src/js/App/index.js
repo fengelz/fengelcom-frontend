@@ -9,17 +9,17 @@ import { Master } from './components/'
 const store = configureStore()
 
 const App = () => (
-    <Master>
-        <Provider store={store} >
-            <Router history={history}>
+    <Provider store={store} >
+        <Router history={history}>
+            <Master>
                 <Switch>
                     <Route exact path="/" component={HomeContainer} />
                     <Route path="/about" component={AboutContainer} />
                     <Route path="/:postId/:slug" component={PostContainer} />
                 </Switch>
-            </Router>
-        </Provider>
-    </Master>
+            </Master>
+        </Router>
+    </Provider>
 )
 
 export default App

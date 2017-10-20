@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Menu from '../Menu'
 
 class Header extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class Header extends Component {
                         Fengel.com
                     </h1>
                 </header>
+                <Menu />
             </div>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { aboutPropTypes } from '../../utils/propTypes'
 import { aboutDefaultProps } from '../../utils/defaultProps'
 
@@ -16,8 +15,7 @@ class About extends Component {
         }
         return (
             <div>
-                <h2>About</h2>
-                <Link to={'/'}>Home</Link>
+                Abouuut
             </div>
         )
     }
