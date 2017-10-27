@@ -1,6 +1,13 @@
 .post-list-item {
     padding: 1rem 2rem;
 
+    &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid $dark-grey;
+        width: 100%;
+    }
+
     a {
         font-size: 1rem;
         color: $grey;
@@ -8,9 +15,8 @@
     }
     .excerpt {
         p {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-style: italic;
-            font-family: serif;
             color: $light-grey;
         }
     }
@@ -18,8 +24,5 @@
         font-size: 0.5rem;
         color: $dark-grey;
 
-    }
-    hr {
-        border-color: $light-grey;
     }
 }

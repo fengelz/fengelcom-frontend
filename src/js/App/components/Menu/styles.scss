@@ -1,0 +1,14 @@
+.menu {
+    ul {
+        list-style: none;
+        li {
+            a {
+                text-decoration: none;
+                color: $dark-grey;
+                &:visited {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}

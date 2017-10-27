@@ -28,7 +28,6 @@ class Posts extends Component {
                             <h2>{post.title.rendered}</h2>
                             <Html className="excerpt" content={post.excerpt.rendered} />
                             <time>{formatDate(new Date(post.date))}</time>
-                            <hr />
                         </Link>
                     </div>
 
