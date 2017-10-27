@@ -27,3 +27,19 @@ export const getCookie = (name) => {
 export const setCookie = (name, value) => {
     document.cookie = `${name}=${value}`
 }
+
+export const formatDate = (date) => {
+    // const monthNames = [
+    //     'January', 'February', 'March',
+    //     'April', 'May', 'June', 'July',
+    //     'August', 'September', 'October',
+    //     'November', 'December',
+    // ]
+
+    const day = date.getDate()
+    const monthIndex = date.getMonth()
+    const year = date.getFullYear()
+
+    return `${day} / ${monthIndex + 1} / ${year}`
+    // return `${day} ${monthNames[monthIndex]} ${year}`
+}
