@@ -1,6 +1,6 @@
 *, *:before, *:after {
     box-sizing: border-box;
-    font-family: 'Mobilo', Arial, sans-serif;
+    font-family: 'Lustria', serif;
 }
 html, body {
     font-size: $root-size; //root size for rem calculation
@@ -8,6 +8,9 @@ html, body {
 h1 {
     font-size: $extra-extra-large;
     line-height: $extra-extra-large;
+}
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
 }
 .page-component {
     position: fixed;

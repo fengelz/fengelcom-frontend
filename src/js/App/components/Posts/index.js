@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { postsPropTypes } from '../../utils/propTypes'
 import { postsDefaultProps } from '../../utils/defaultProps'
+import Html from '../Global/Html'
 
 class Posts extends Component {
     constructor(props) {
@@ -21,9 +22,11 @@ class Posts extends Component {
         return (
             <div>
                 {this.props.posts.data.map(post => (
-                    <div key={post.id}>
+                    <div className="post-list-item" key={post.id}>
                         <Link to={`${post.link.replace('http://fengel.com', '')}`}>
                             <h2>{post.title.rendered}</h2>
+                            <Html className="excerpt" content={post.excerpt.rendered} />
+                            <hr />
                         </Link>
                     </div>
 

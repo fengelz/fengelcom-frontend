@@ -11,7 +11,6 @@ class Post extends Component {
     }
 
     componentDidMount() {
-        console.log('mount');
         this.props.fetchPost(`http://fengel.com/wp-json/wp/v2/posts/${this.props.match.params.postId}`)
     }
 

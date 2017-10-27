@@ -11,7 +11,7 @@ class Header extends Component {
     render() {
         return (
             <aside>
-                <header className="wrapper clearfix">
+                <header>
                     <h1 className="title">
                         Fengel.com
                     </h1>

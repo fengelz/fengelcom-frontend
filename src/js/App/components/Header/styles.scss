@@ -2,5 +2,10 @@ aside {
     @extend .flex-column;
     width: 230px;
     min-height: 100vh;
-    background: #eee;
+    background: $light-grey;
+    padding: 0 0.5rem;
+    h1 {
+        max-width: 100%;
+    }
+
 }

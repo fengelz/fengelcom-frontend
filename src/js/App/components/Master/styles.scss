@@ -5,6 +5,6 @@
 
 main {
     @extend .flex-column;
-    background: #ccc;
+    background: $broken-white;
     width: calc(100vw - 230px);
 }

@@ -1,0 +1,19 @@
+.post-list-item {
+    padding: 1rem 2rem;
+
+    a {
+        font-size: 1rem;
+        color: $grey;
+        text-decoration: none;
+    }
+    .excerpt {
+        p {
+            font-size: 0.75rem;
+            font-style: italic;
+            font-family: serif;
+        }
+    }
+    hr {
+        border-color: $light-grey;
+    }
+}
