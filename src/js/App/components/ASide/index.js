@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Menu from '../Menu'
 
-class Header extends Component {
+class ASide extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -12,9 +12,7 @@ class Header extends Component {
         return (
             <aside>
                 <header>
-                    <h1 className="title">
-                        Fengel.com
-                    </h1>
+                    <h1>Fengel.com</h1>
                 </header>
                 <Menu />
             </aside>
@@ -22,4 +20,4 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default ASide

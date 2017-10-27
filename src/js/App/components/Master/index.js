@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../Header'
+import ASide from '../ASide'
 import { masterPropTypes } from '../../utils/propTypes'
 import { masterDefaultProps } from '../../utils/defaultProps'
 
@@ -13,7 +13,7 @@ class Master extends Component {
     render() {
         return (
             <div className="master">
-                <Header />
+                <ASide />
                 <main>{this.props.children}</main>
             </div>
         )
