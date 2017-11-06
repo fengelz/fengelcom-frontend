@@ -13,7 +13,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts('https://fengel.com/wp-json/wp/v2/posts?per_page=100')
+        this.props.fetchPosts('//fengel.com/wp-json/wp/v2/posts?per_page=100')
     }
 
     render() {
