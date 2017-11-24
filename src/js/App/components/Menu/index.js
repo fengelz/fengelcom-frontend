@@ -22,6 +22,13 @@ class Menu extends Component {
                     <li><Link to={'/'}>Home</Link></li>
                     <li><Link to={'/about'}>About</Link></li>
                 </ul>
+                {!this.props.data.categories.isLoading &&
+                    <ul>
+                        {this.props.data.categories.data.map(category => (
+                            <li key={`${category.slug}`}><Link to={`/category/${category.id}/${category.slug}`}>{category.name}</Link></li>
+                        ))}
+                    </ul>
+                }
             </div>
         )
     }
