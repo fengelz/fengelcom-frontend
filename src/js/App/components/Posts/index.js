@@ -14,7 +14,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts(`${endpoints.posts()}?per_page=100`)
+        this.props.fetchPosts(`${endpoints.posts()}`)
     }
 
     render() {
