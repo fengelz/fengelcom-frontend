@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { postPropTypes } from '../../utils/propTypes'
 import { postDefaultProps } from '../../utils/defaultProps'
+import { endpoints } from '../../utils/constants'
 import Html from '../Global/Html'
 
 class Post extends Component {
@@ -11,7 +12,7 @@ class Post extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchPost(`//fengel.com/wp-json/wp/v2/posts/${this.props.match.params.postId}`)
+        this.props.fetchPost(`${endpoints.post(this.props.match.params.postId)}`)
     }
 
     render() {

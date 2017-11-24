@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { postsPropTypes } from '../../utils/propTypes'
 import { postsDefaultProps } from '../../utils/defaultProps'
 import { formatDate } from '../../utils/helpers'
+import { endpoints } from '../../utils/constants'
 import Html from '../Global/Html'
 
 class Posts extends Component {
@@ -13,7 +14,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts('//fengel.com/wp-json/wp/v2/posts?per_page=100')
+        this.props.fetchPosts(`${endpoints.posts()}?per_page=100`)
     }
 
     render() {
