@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Menu from '../Menu'
+import { MenuContainer } from '../../containers'
 
 class ASide extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class ASide extends Component {
                 <header>
                     <h1>Fengel.com</h1>
                 </header>
-                <Menu />
+                <MenuContainer />
             </aside>
         )
     }
