@@ -25,7 +25,7 @@ class Menu extends Component {
                 {!this.props.data.categories.isLoading &&
                     <ul>
                         {this.props.data.categories.data.map(category => (
-                            <li key={`${category.slug}`}><Link to={`/category/${category.id}/${category.slug}`}>{category.name}</Link></li>
+                            <li key={`${category.slug}`}><Link to={`/categories/${category.id}/${category.slug}`}>{category.name}</Link></li>
                         ))}
                     </ul>
                 }

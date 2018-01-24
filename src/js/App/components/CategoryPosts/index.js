@@ -19,7 +19,7 @@ class CategoryPosts extends Component {
 
     render() {
         if (this.props.categoryPosts.isLoading) {
-            return <div>Loading...</div>
+            return <div>Loading categories in {this.props.match.params.categoryId}...</div>
         }
         return (
             <div>

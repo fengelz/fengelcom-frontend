@@ -17,7 +17,7 @@ class Post extends Component {
 
     render() {
         if (this.props.isLoading) {
-            return <div>loading.</div>
+            return <div>loading post...</div>
         }
         return (
             <div>

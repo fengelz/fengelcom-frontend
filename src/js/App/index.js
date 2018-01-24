@@ -15,7 +15,7 @@ const App = () => (
                 <Switch>
                     <Route exact path="/" component={HomeContainer} />
                     <Route path="/about" component={AboutContainer} />
-                    <Route exact path="/category/:categoryId/:slug" component={CategoryPostsContainer} />
+                    <Route path="/categories/:categoryId/:slug" component={CategoryPostsContainer} />
                     <Route path="/:postId/:slug" component={PostContainer} />
                 </Switch>
             </Master>
