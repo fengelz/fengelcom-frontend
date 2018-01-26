@@ -5,6 +5,7 @@ import { postsDefaultProps } from '../../utils/defaultProps'
 import { formatDate } from '../../utils/helpers'
 import { endpoints } from '../../utils/constants'
 import Html from '../Global/Html'
+import PostListItem from '../Global/PostListItem'
 
 class Posts extends Component {
     constructor(props) {
@@ -24,14 +25,7 @@ class Posts extends Component {
         return (
             <div>
                 {this.props.posts.data.map(post => (
-                    <div className="post-list-item" key={post.id}>
-                        <Link to={`${post.link.replace('http://fengel.com', '')}`}>
-                            <h2>{post.title.rendered}</h2>
-                            <Html className="excerpt" content={post.excerpt.rendered} />
-                            <time>{formatDate(new Date(post.date))}</time>
-                        </Link>
-                    </div>
-
+                    <PostListItem key={post.id} post={post} />
                 ))}
             </div>
         )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Route, BrowserRouter as Router, history, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import configureStore from './store/configureStore'
 import { HomeContainer, AboutContainer, PostContainer, CategoryPostsContainer } from './containers'
@@ -10,13 +10,13 @@ const store = configureStore()
 
 const App = () => (
     <Provider store={store} >
-        <Router history={history}>
+        <Router>
             <Master>
                 <Switch>
                     <Route exact path="/" component={HomeContainer} />
-                    <Route path="/about" component={AboutContainer} />
-                    <Route path="/categories/:categoryId/:slug" component={CategoryPostsContainer} />
-                    <Route path="/:postId/:slug" component={PostContainer} />
+                    <Route exact path="/about" component={AboutContainer} />
+                    <Route path="/categories/:categoryId" component={CategoryPostsContainer} />
+                    <Route path="/posts/:postId/:slug" component={PostContainer} />
                 </Switch>
             </Master>
         </Router>
