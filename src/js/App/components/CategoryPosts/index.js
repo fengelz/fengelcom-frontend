@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { postsPropTypes } from '../../utils/propTypes'
 import { postsDefaultProps } from '../../utils/defaultProps'
-import { formatDate } from '../../utils/helpers'
 import { endpoints } from '../../utils/constants'
-import Html from '../Global/Html'
 import PostListItem from '../Global/PostListItem'
 
 class CategoryPosts extends Component {
@@ -18,9 +15,15 @@ class CategoryPosts extends Component {
         this.props.fetchCategoryPosts(`${endpoints.categoryPosts(this.props.match.params.categoryId)}`)
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.location !== this.props.location) {
+            this.props.fetchCategoryPosts(`${endpoints.categoryPosts(nextProps.match.params.categoryId)}`)
+        }
+    }
+
     render() {
         if (this.props.categoryPosts.isLoading) {
-            return <div>Loading categories in {this.props.match.params.categoryId}...</div>
+            return <div>Loading...</div>
         }
         return (
             <div>
