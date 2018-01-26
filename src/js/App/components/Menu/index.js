@@ -13,7 +13,6 @@ class Menu extends Component {
 
     componentDidMount() {
         this.props.fetchCategories(`${endpoints.categories()}`)
-        this.props.fetchPosts(`${endpoints.posts()}`)
     }
 
     render() {
@@ -27,13 +26,6 @@ class Menu extends Component {
                     <ul>
                         {this.props.data.categories.data.map(category => (
                             <li key={`${category.slug}`}><Link replace to={`/categories/${category.id}/${category.slug}`}>{category.name}</Link></li>
-                        ))}
-                    </ul>
-                }
-                {!this.props.data.posts.isLoading &&
-                    <ul>
-                        {this.props.data.posts.data.map(post => (
-                            <li key={`${post.slug}`}><Link replace to={`/posts/${post.id}/${post.slug}`}>{post.title.rendered}</Link></li>
                         ))}
                     </ul>
                 }
