@@ -1,6 +1,8 @@
-export const rootUrl = 'http://fengel.com/wp-json/wp/v2/'
+export const rootUrl = '//fengel.com/wp-json/wp/v2/'
 
 export const endpoints = {
-    posts: () => (`${rootUrl}posts`),
-    post: id => (`${rootUrl}post/${id}`),
+    categories: () => (`${rootUrl}categories`),
+    categoryPosts: cat => (`${rootUrl}posts?categories=${cat}`),
+    posts: () => (`${rootUrl}posts?per_page=100`),
+    post: id => (`${rootUrl}posts/${id}`),
 }

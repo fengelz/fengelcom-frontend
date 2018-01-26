@@ -7,7 +7,7 @@ import { endpoints } from '../../utils/constants'
 import Html from '../Global/Html'
 import PostListItem from '../Global/PostListItem'
 
-class Posts extends Component {
+class CategoryPosts extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,16 +15,16 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchPosts(`${endpoints.posts()}`)
+        this.props.fetchCategoryPosts(`${endpoints.categoryPosts(this.props.match.params.categoryId)}`)
     }
 
     render() {
-        if (this.props.isLoading) {
-            return <div>loading posts...</div>
+        if (this.props.categoryPosts.isLoading) {
+            return <div>Loading categories in {this.props.match.params.categoryId}...</div>
         }
         return (
             <div>
-                {this.props.posts.data.map(post => (
+                {this.props.categoryPosts.data.map(post => (
                     <PostListItem key={post.id} post={post} />
                 ))}
             </div>
@@ -32,8 +32,8 @@ class Posts extends Component {
     }
 }
 
-Posts.propTypes = postsPropTypes
+CategoryPosts.propTypes = postsPropTypes
 
-Posts.defaultProps = postsDefaultProps
+CategoryPosts.defaultProps = postsDefaultProps
 
-export default Posts
+export default CategoryPosts

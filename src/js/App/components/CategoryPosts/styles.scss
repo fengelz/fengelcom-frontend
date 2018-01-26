@@ -1,0 +1,28 @@
+.post-list-item {
+    padding: 1rem 2rem;
+
+    &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid $dark-grey;
+        width: 100%;
+    }
+
+    a {
+        font-size: 1rem;
+        color: $grey;
+        text-decoration: none;
+    }
+    .excerpt {
+        p {
+            font-size: 0.65rem;
+            font-style: italic;
+            color: $light-grey;
+        }
+    }
+    time {
+        font-size: 0.5rem;
+        color: $dark-grey;
+
+    }
+}
