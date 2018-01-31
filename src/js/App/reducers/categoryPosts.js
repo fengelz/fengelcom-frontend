@@ -18,6 +18,11 @@ export function categoryPostsIsLoading(state = true, action) {
 
 export function categoryPosts(state = { isLoading: true }, action) {
     switch (action.type) {
+        case 'CATEGORY_POSTS_IS_LOADING':
+            return Object.assign({}, state, {
+                isLoading: true,
+                data: [],
+            })
         case 'FETCH_CATEGORY_POSTS_SUCCESS':
             return Object.assign({}, state, {
                 isLoading: false,

@@ -18,6 +18,11 @@ export function postIsLoading(state = true, action) {
 
 export function post(state = { isLoading: true }, action) {
     switch (action.type) {
+        case 'POST_IS_LOADING':
+            return Object.assign({}, state, {
+                isLoading: true,
+                data: {},
+            })
         case 'FETCH_POST_SUCCESS':
             return Object.assign({}, state, {
                 isLoading: false,
